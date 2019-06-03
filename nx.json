@@ -1,0 +1,24 @@
+{
+  "npmScope": "corporate-app",
+  "implicitDependencies": {
+    "angular.json": "*",
+    "package.json": "*",
+    "tsconfig.json": "*",
+    "tslint.json": "*",
+    "nx.json": "*"
+  },
+  "projects": {
+    "nexus": {
+      "tags": []
+    },
+    "nexus-e2e": {
+      "tags": []
+    },
+    "models": {
+      "tags": []
+    },
+    "services": {
+      "tags": []
+    }
+  }
+}
