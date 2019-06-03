@@ -1,0 +1,78 @@
+<div class="wrapper">
+  <div class="container">
+    <mat-card class="studentListContainer">
+        <div class="header-wrapper">
+            <div class="coropate-header">
+            Corporate
+          </div>
+            <div class="coropate-header-icon">  <mat-icon>more_vert</mat-icon></div>
+        </div>
+        <div class="scrollWrapper">
+          <mat-nav-list *ngFor="let item of (Corparate | searchResolver: searchText)" Dense>
+            <a mat-list-item [ngClass]="{ 'list-item-active': activeHospital === item.id }">
+              <span style="margin-left: 10px;">
+                {{ item.name }}
+              </span>
+            </a>
+            <mat-divider></mat-divider>
+          </mat-nav-list>
+            <button mat-button class="add-corporate-button" (click)="showCorporateReference()">Add Corporate<mat-icon>add</mat-icon></button>
+        </div>
+    </mat-card>
+    <div class="detailContainer">
+      <mat-card  class="details">
+
+        <div class="corporate-desc">
+          <div class="name-wrapper">
+          <div class="name">Huntingotan Hospital</div>
+          <div class="aliasName">Alias Name</div>
+          <div class="website">www.exxat.com</div>
+          </div>
+
+          <div class="call">
+            <div class="call-title">Call:</div>
+            <div class="call-desc">334-256-5842</div>
+          </div>
+          <div class="address">
+            <div class="call-title">Address</div>
+            <div class="call-desc">
+                301-A Kapil Zenith IT Park, Survey No 55, Hissa No 1, Off Vaidehi Enclave Road, Vaidehi
+                Enclave, Bavdhan
+            </div>
+          </div>
+          <div class="edit-corporate">
+             <mat-icon class="edit-icon" (click)="showCorporateReference()">edit</mat-icon>
+          </div>
+        </div>
+
+
+        <div class="site-count">
+          <!-- <div class="site-number">25</div>
+          <div class="site-title">SITES</div> -->
+        </div>
+        <div class="contract-coun">
+            <!-- <div class="contract-number">3</div>
+            <div class="contract-title">CONTRACT</div> -->
+        </div>
+      </mat-card>
+        <ul class="nav navbar-nav">
+          <li><a routerLink="/contract">recipe</a></li>
+          <li><a [routerLink]="['/corporateDetails']" >management</a></li>
+        </ul>>
+
+      <mat-card class="workArea1">
+        <div class="linksBorder">
+        <nav mat-tab-nav-bar>
+          <a *ngFor="let link of links" mat-tab-link (click)="navigateTab(link)" #tab
+          [active]="activeTab == link.link" [disabled]="showMessage">{{ link.linkLabel }}</a>
+          <span class="example-spacer"></span>
+        </nav>
+      </div>
+        <div class="showMessage">
+           <corporate-app-corporate-details></corporate-app-corporate-details>
+        </div>
+      </mat-card>
+    </div>
+
+  </div>
+</div>
